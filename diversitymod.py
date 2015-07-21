@@ -50,7 +50,7 @@ print("Diversity mod will create and overwrite files in:\n" + resourcepath + "\n
 
 # set seed to the user entered number, loops if you don't enter a number
 try:
-	isaacseed = raw_input("Enter alphanumeric seed (or enter no text to quit): ")
+	isaacseed = raw_input("Enter seed (case sensitive) or enter no text to quit: ")
 	seed(isaacseed)
 except ValueError:
 	print("\nThere was an error processing that seed. Quitting...\n")
@@ -65,7 +65,7 @@ if isaacseed == '':
 
 # ntp is the list of every item ID in the range(1-346) to be excluded from the random starting items...
 # they are space activated items, invalid IDs, and some boring items
-ntp = [15, 16, 22, 23, 24, 25, 26, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 49, 56, 58, 59, 61, 65, 66, 74, 77, 78, 83, 84, 85, 86, 93, 97, 102, 105, 107, 111, 123, 124, 126, 127, 130, 133, 135, 136, 137, 145, 146, 147, 158, 160, 164, 166, 171, 175, 176, 177, 181, 186, 192, 235, 238, 239, 253, 263, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 323, 324, 325, 326, 338, 339, 344, 346]
+ntp = [15, 16, 22, 23, 24, 25, 26, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 49, 56, 58, 59, 61, 65, 66, 74, 77, 78, 83, 84, 85, 86, 92, 93, 97, 102, 105, 107, 111, 119, 123, 124, 126, 127, 130, 133, 135, 136, 137, 145, 146, 147, 158, 160, 164, 166, 171, 175, 176, 177, 181, 186, 192, 194, 226, 235, 238, 239, 253, 263, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 323, 324, 325, 326, 334, 338, 339, 344, 346]
 
 # create array to hold the list of items we'll give the characters
 itemIDs = []
