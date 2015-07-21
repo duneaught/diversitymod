@@ -128,9 +128,9 @@ try:
 	smallfont = ImageFont.truetype(os.getcwd()+"/diversitymod files/comicbd.ttf", 10)
 	largefont = ImageFont.truetype(os.getcwd()+"/diversitymod files/comicbd.ttf", 16)
 
-	w, h = draw.textsize("Diversity Mod v0.2 Seed",font=smallfont)
+	w, h = draw.textsize("Diversity Mod v0.3 Seed",font=smallfont)
 	w2, h2 = draw.textsize(str(isaacseed),font=largefont)
-	draw.text((240-w/2, 213),"Diversity Mod v0.2 Seed",(54,47,45),font=smallfont)
+	draw.text((240-w/2, 213),"Diversity Mod v0.3 Seed",(54,47,45),font=smallfont)
 	draw.text((240-w2/2, 225),str(isaacseed),(54,47,45),font=largefont)
 
 	img.save(resourcepath+'/gfx/ui/main menu/charactermenu.png')
