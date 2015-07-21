@@ -28,7 +28,7 @@ shutil.copytree('dist/', installDir)
 shutil.copytree('diversitymod files/', installDir + 'diversitymod files/')
 
 #shutil.copy('extra_files', installDir)
-shutil.copy('diversitymod.txt', installDir)
+shutil.copy('README.md', installDir)
 
 with open(installDir + "version.txt", 'w') as f:
   f.write(version)
