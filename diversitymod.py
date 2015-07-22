@@ -1,6 +1,6 @@
 import shutil
 import os
-from random import randint, seed
+from random import seed, sample, randint
 from PIL import Image, ImageFont, ImageDraw 
 
 ##
@@ -48,38 +48,24 @@ else:
 # tell the user where you're writing
 print("Diversity mod will create and overwrite files in:\n" + resourcepath + "\n")
 
-# set seed to the user entered number, loops if you don't enter a number
+# set seed to the user entered number, picks
 try:
-	isaacseed = raw_input("Enter seed (case sensitive) or enter no text to quit: ")
+	isaacseed = raw_input("Enter seed (case sensitive) or just press Enter for a random seed: ")
+	# if no seed was entered, generate one
+	if isaacseed == '':
+		isaacseed = str(randint(0,999999))
+		print("\nRandomly generated seed: " + isaacseed + "\n")
 	seed(isaacseed)
 except ValueError:
 	print("\nThere was an error processing that seed. Quitting...\n")
 	raw_input("Script complete.\n")
 	sys.exit()
 
-# if no seed was entered, just quit
-if isaacseed == '':
-	print("\nNo seed entered. Quitting...\n")
-	raw_input("Script complete.\n")
-	sys.exit()
+# valid_items is the list of all passive items in the game EXCLUDING the 22 on the no-list
+valid_items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 27, 28, 32, 46, 48, 50, 51, 52, 53, 54, 55, 57, 60, 62, 63, 64, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 87, 88, 89, 90, 91, 94, 95, 96, 98, 99, 100, 101, 103, 104, 106, 108, 109, 110, 112, 113, 114, 115, 116, 117, 118, 120, 121, 122, 125, 128, 129, 131, 132, 134, 138, 139, 140, 141, 142, 143, 144, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 161, 162, 163, 165, 167, 168, 169, 170, 172, 173, 174, 178, 179, 180, 182, 183, 184, 185, 187, 188, 189, 190, 191, 193, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 254, 255, 256, 257, 258, 259, 260, 261, 262, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 327, 328, 329, 330, 331, 332, 333, 335, 336, 337, 340, 341, 342, 343, 345]
 
-# ntp is the list of every item ID in the range(1-346) to be excluded from the random starting items...
-# they are space activated items, invalid IDs, and some boring items
-ntp = [15, 16, 22, 23, 24, 25, 26, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 49, 56, 58, 59, 61, 65, 66, 74, 77, 78, 83, 84, 85, 86, 92, 93, 97, 102, 105, 107, 111, 119, 123, 124, 126, 127, 130, 133, 135, 136, 137, 145, 146, 147, 158, 160, 164, 166, 171, 175, 176, 177, 181, 186, 192, 194, 226, 235, 238, 239, 253, 263, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 323, 324, 325, 326, 334, 338, 339, 344, 346]
-
-# create array to hold the list of items we'll give the characters
-itemIDs = []
-
-# 30 items is enough to give 3 to each of the 10 characters (we excluded eden)
-for x in range(0, 30):
-	while True:
-		# generate a random number from all the item IDs
-		id = randint(1,346)
-		# check if it's on the (bad) ntp list, if it is we try another ID, and add the item to the list (so we don't pick it twice)
-		if (id in ntp) == False:
-			ntp.append(id)
-			itemIDs.append(id)
-			break
+# creates list of 30 unique items from the valid items list
+itemIDs = sample(valid_items,30)
 
 # create string
 pxmlString = '''<players root="resources/gfx/characters/costumes/" portraitroot="resources/gfx/ui/boss/" bigportraitroot="resources/gfx/ui/stage/">
