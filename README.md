@@ -1,12 +1,20 @@
 Diversity Mod for The Binding of Isaac: Rebirth
-version 0.3
+
+version 0.4
 
 Created by DuneAught (twitter: @duneaught)
-with much help from Zamiel, Inschato, & #isaac on SpeedRunsLive
+with much help from Zamiel, Inschato, Hyphenated & #isaac on SpeedRunsLive
 
 ---
 
-Description:
+Running diversitymod.exe does 2 things:
+
+1. Installs mod files in the Rebirth resources folder.
+2. Starts (or restarts) The Binding of Isaac: Rebirth.
+
+---
+
+Description of the Mod:
 
 Each character starts with the D6 and 3 random passive items. Eden is unaffected by the mod. Characters who normally start with passive items keep those and get 3 additional items.
 
@@ -24,19 +32,26 @@ Room modifications are taken directly from Balls of Steel Weekly mod 1.2:
 
 Important Notes:
 
-Running diversitymod.exe generates and automatically installs Diversity Mod by writing files to The Binding of Isaac Rebirth resources directory.
+To uninstall Rebirth mods, remove everything from the resources directory EXCEPT the "packed" folder. (It is critically important to leave the "packed" folder and its contents unchanged.) It is recommended to uninstall other Rebirth mods before installing Diversity Mod.
+
+Running diversitymod.exe generates and automatically installs Diversity Mod by writing files to The Binding of Isaac: Rebirth resources directory.
 
 Conflicting mod files in the resources directory will be overwritten. Non-conflicting mod files from previously installed mods will remain and affect play.
 
 If the resources directory is not in the default Steam location, the Diversity Mod files will be written to the directory containing diversitymod.exe, and must be manually moved to the resources directory.
 
-After running diversitymod.exe, The Binding of Isaac: Rebirth must be restarted for the changes to take effect.
-
-To uninstall Rebirth mods, remove everything from the resources directory EXCEPT the "packed" folder. (It is critically important to leave the "packed" folder and its contents unchanged.) You may want to do this before installing Diversity Mod.
+Running diversitymod.exe starts The Binding of Isaac: Rebirth. If Rebirth is already running, the game is automatically closed and re-started.
 
 ---
 
 Change log:
+
+version 0.4
+- automatically starts (or restarts) isaac-ng.exe
+- generates a random seed when no seed is entered
+- fixed so A Quarter (ID74) is a possible starting item
+- changed to have an INCLUDE list instead of an EXCLUDE list
+- changed random starting items method to random.sample()
 
 version 0.3
 - added Super Bandage (ID92), Blood Bag (ID119), Magic 8 Ball (ID194), Black Lotus (226), & The Body (ID334) to list of excluded passives
@@ -55,25 +70,25 @@ version 0.1
 22 Passive items are EXCLUDED from the random starting items.
 
 ID	Name
-15	<3
-16	Raw Liver
-22	Lunch
-23	Dinner
-24	Dessert
-25	Breakfast
-26	Rotten Meat
-29	Moms Underwear
-30	Moms Heels
-31	Moms Lipstick
-92	Super Bandage
-119	Blood Bag
-176	Stem cells
-194	Magic 8 Ball
-226	Black Lotus
-238	Key Piece #1
-239	Key Piece #2
-253	Magic scab
-334	The Body
-339	Safety Pin
-344	Match Book
-346	A Snack
+- 15	<3
+- 16	Raw Liver
+- 22	Lunch
+- 23	Dinner
+- 24	Dessert
+- 25	Breakfast
+- 26	Rotten Meat
+- 29	Moms Underwear
+- 30	Moms Heels
+- 31	Moms Lipstick
+- 92	Super Bandage
+- 119	Blood Bag
+- 176	Stem cells
+- 194	Magic 8 Ball
+- 226	Black Lotus
+- 238	Key Piece #1
+- 239	Key Piece #2
+- 253	Magic scab
+- 334	The Body
+- 339	Safety Pin
+- 344	Match Book
+- 346	A Snack

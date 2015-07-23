@@ -114,9 +114,9 @@ try:
 	smallfont = ImageFont.truetype(os.getcwd()+"/diversitymod files/comicbd.ttf", 10)
 	largefont = ImageFont.truetype(os.getcwd()+"/diversitymod files/comicbd.ttf", 16)
 
-	w, h = draw.textsize("Diversity Mod v0.3 Seed",font=smallfont)
+	w, h = draw.textsize("Diversity Mod v0.4 Seed",font=smallfont)
 	w2, h2 = draw.textsize(str(isaacseed),font=largefont)
-	draw.text((240-w/2, 213),"Diversity Mod v0.3 Seed",(54,47,45),font=smallfont)
+	draw.text((240-w/2, 213),"Diversity Mod v0.4 Seed",(54,47,45),font=smallfont)
 	draw.text((240-w2/2, 225),str(isaacseed),(54,47,45),font=largefont)
 
 	img.save(resourcepath+'/gfx/ui/main menu/charactermenu.png')
@@ -153,7 +153,7 @@ print("Removing donation machines, bad angel rooms, & unavoidable damage ...")
 try:
 	# check if folder structure exists for rooms mod, create if necessary
 	if not os.path.exists(resourcepath+'/rooms/'):
-		print("Creating directories for graphics ...\n")
+		print("Creating directories for rooms ...\n")
 		os.makedirs(resourcepath+'/rooms/')
 
 	shutil.copyfile(currentpath+'/diversitymod files/rooms/00.special rooms.stb',resourcepath+'/rooms/00.special rooms.stb')
@@ -177,5 +177,26 @@ else:
 	if findpathfail:
 		print("If this is not your resources folder, move players.xml, items.xml, itempools.xml, gfx, & rooms to the correct folder to install Diversity Mod.\n")
 
-print("Script complete.\nPress Enter to close.\n")
+print("Press Enter to start The Binding of Isaac: Rebirth.\nIf Rebirth is currently running, it will be closed and re-opened.\n")
 raw_input()
+
+
+# if Rebirth is running, kill it (returns an ugly error if Rebirth is not running, but just ignore it I guess)
+try:
+	print("Attempting to kill Isaac ...\n")
+	os.system("taskkill /im isaac-ng.exe /f")
+except OSError:
+	print("There was an error closing Rebirth.")
+
+# start Rebirth
+print("\nAttempting to initiate Rebirth...\n")
+try:
+	if os.path.exists(resourcepath+"/../../../../steam.exe"):
+		print("Found steam ...")
+		os.system('"'+resourcepath+'/../../../../steam.exe" -applaunch 250900')
+	elif os.path.exists(resourcepath+"/../isaac-ng.exe"):
+		print("No Steam, but found isaac-ng.exe ...")
+		os.system('"'+resourcepath+'/../isaac-ng.exe"')
+except OSError:
+	print("Starting Rebirth failed.\nPress Enter to close.")
+	raw_input()
