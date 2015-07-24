@@ -1,6 +1,6 @@
 Diversity Mod for The Binding of Isaac: Rebirth
 
-version 0.4
+version 0.4+
 
 Created by DuneAught (twitter: @duneaught)
 with much help from Zamiel, Inschato, Hyphenated & #isaac on SpeedRunsLive
@@ -11,6 +11,10 @@ Running diversitymod.exe does 2 things:
 
 1. Installs mod files in the Rebirth resources folder.
 2. Starts (or restarts) The Binding of Isaac: Rebirth.
+
+Running RemoveAllRebirthMods.exe:
+
+1. Deletes all files in the Rebirth resources folder *EXCEPT the 'packed' folder.
 
 ---
 
@@ -45,6 +49,9 @@ Running diversitymod.exe starts The Binding of Isaac: Rebirth. If Rebirth is alr
 ---
 
 Change log:
+
+version 0.4+
+- packaged with RemoveAllRebirthMods for easy uninstall
 
 version 0.4
 - automatically starts (or restarts) isaac-ng.exe
