@@ -12,9 +12,9 @@ installDir = 'target/' + installName + '/'
 
 #then build the option builder using normal py2exe
 sys.argv.append('py2exe')
-#setup(console=['diversitymod.py','RemoveAllRebirthMods.py'])
+#setup(console=['diversitymod.py','WipeRebirthResourcesFolder.py'])
 setup(
-	console=['diversitymod.py','RemoveAllRebirthMods.py'],
+	console=['diversitymod.py','WipeRebirthResourcesFolder.py'],
 	options = {
 		'py2exe': {
 			'includes': ['shutil','random','PIL','os','_winreg'],

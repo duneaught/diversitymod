@@ -41,11 +41,11 @@ else:
 	sys.exit()
 
 # tell the user where you're deleting
-print("WARNING: This program will delete all non-essential files in:\n" + resourcepath + "\n")
+print("WARNING: This program will delete ALL non-essential files in:\n" + resourcepath + "\n")
 
 # prompt user for confirmation to delete files
 try:
-	confirmdelete = raw_input("Deleted files cannot be recovered.\nAre you sure you want to remove all mods?\n\nTo delete mod files, enter 'y': ")
+	confirmdelete = raw_input("Deleted files cannot be recovered.\nAre you sure you want to continue?\n\nTo delete all files, enter 'y': ")
 	print("")
 except ValueError:
 	raw_input("\nThere was an input error.\nPress Enter to close.\n")
