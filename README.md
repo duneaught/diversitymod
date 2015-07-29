@@ -44,6 +44,14 @@ Conflicting mod files in the resources directory will be overwritten. Non-confli
 
 If the resources directory is not in the default Steam location, the Diversity Mod files will be written to the directory containing diversitymod.exe, and must be manually moved to the resources directory.
 
+The Diversity Mod files are...
+-items.xml
+-itempools.xml
+-players.xml
+-/gfx/
+-/rooms/
+For Diversity Mod to function correctly, these folders and files must be in the Rebirth Resources folder when The Binding of Isaac: Rebirth is started.
+
 Running diversitymod.exe starts The Binding of Isaac: Rebirth. If Rebirth is already running, the game is automatically closed and re-started.
 
 ---
