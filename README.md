@@ -1,26 +1,17 @@
 Diversity Mod for The Binding of Isaac: Rebirth
 
-version 0.4+
+version 0.5
 
 Created by DuneAught (twitter: @duneaught)
 with much help from Zamiel, Inschato, Hyphenated & #isaac on SpeedRunsLive
 
 ---
 
-Running diversitymod.exe does 2 things:
-
-1. Installs Diversity Mod files in the Rebirth resources folder.
-2. Starts (or restarts) The Binding of Isaac: Rebirth.
-
-Running WipeRebirthResourcesFolder.exe:
-
-1. Deletes ALL files in the Rebirth resources folder EXCEPT the 'packed' folder.
-
----
-
 Description of the Mod:
 
-Each character starts with the D6 and 3 random passive items. Eden is unaffected by the mod. Characters who normally start with passive items keep those and get 3 additional items.
+All characters start with the D6 except Eden, who gets a random space-use item as usual.
+
+All characters start with 3 additional random passive items, keeping their original items and resources.
 
 Four items (Mom's Knife, Brimstone, IPECAC, & Epic Fetus) have been removed from their respective item pools. They may be assigned as random starting items, but they will not appear in game during a playthrough.
 
@@ -34,29 +25,26 @@ Room modifications are taken directly from Balls of Steel Weekly mod 1.2:
 
 ---
 
-Important Notes:
+How the Diversity Mod program works:
 
-To uninstall Rebirth mods, remove everything from the resources directory EXCEPT the "packed" folder. (It is critically important to leave the "packed" folder and its contents unchanged.) It is recommended to uninstall other Rebirth mods before installing Diversity Mod.
+Diversity Mod generates and installs mod files based on a user input seed.
 
-Running diversitymod.exe generates and automatically installs Diversity Mod by writing files to The Binding of Isaac: Rebirth resources directory.
+The Binding of Isaac: Rebirth must be restarted for changes to take effect. (There's a button for this!)
 
-Conflicting mod files in the resources directory will be overwritten. Non-conflicting mod files from previously installed mods will remain and affect play.
+When Diversity Mod is closed, it uninstalls the mod files it created.
 
-If the resources directory is not in the default Steam location, the Diversity Mod files will be written to the directory containing diversitymod.exe, and must be manually moved to the resources directory.
-
-The Diversity Mod files are...
--items.xml
--itempools.xml
--players.xml
--/gfx/
--/rooms/
-For Diversity Mod to function correctly, these folders and files must be in the Rebirth Resources folder when The Binding of Isaac: Rebirth is started.
-
-Running diversitymod.exe starts The Binding of Isaac: Rebirth. If Rebirth is already running, the game is automatically closed and re-started.
+If the resources directory is not in the default Steam location, Diversity Mod will prompt the user for the rebirth resources path. After a valid path has been entered, run Diversity Mod again, and it should function normally.
 
 ---
 
 Change log:
+
+version 0.5
+- added GUI
+- added options.ini to hold custom path
+- user is prompted to provide a valid path when the program can't find their steam path
+- Diversity Mod files are removed and previous mods are restored when the program is closed
+- gave Eden 3 random passive items, but she still gets a random spacebar item
 
 version 0.4+
 - packaged with WipeRebirthResourcesFolder for easy uninstall
@@ -79,6 +67,11 @@ version 0.2
 
 version 0.1
 - hello world
+
+---
+
+Known issues:
+-Randomly chosen items can be the same as the starting items of characters. (e.g. Cain can start with 2 lucky feet.)
 
 ---
 
