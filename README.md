@@ -1,6 +1,6 @@
 Diversity Mod for The Binding of Isaac: Rebirth
 
-version 0.5
+version 0.6
 
 Created by DuneAught (twitter: @duneaught)
 with much help from Zamiel, Inschato, Hyphenated & #isaac on SpeedRunsLive
@@ -27,17 +27,24 @@ Room modifications are taken directly from Balls of Steel Weekly mod 1.2:
 
 How the Diversity Mod program works:
 
-Diversity Mod generates and installs mod files based on a user input seed.
+Diversity Mod generates and installs mod files based on a user provided seed. If no seed is provided, a random seed will be generated.
 
 The Binding of Isaac: Rebirth must be restarted for changes to take effect. (There's a button for this!)
 
-When Diversity Mod is closed, it uninstalls the mod files it created.
+When Diversity Mod is closed, it uninstalls the mod files it created; so, the program must remain open for the mod to work with Rebirth.
 
 If the resources directory is not in the default Steam location, Diversity Mod will prompt the user for the rebirth resources path. After a valid path has been entered, run Diversity Mod again, and it should function normally.
+
+The Diversity Mod program won't work if it is inside your Rebirth resources folder.
 
 ---
 
 Change log:
+
+version 0.6
+- check if Diversity Mod is inside the resources folder, then warn and kill
+- spaced code
+- stopped creating version.txt
 
 version 0.5
 - added GUI
