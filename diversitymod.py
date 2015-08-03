@@ -203,8 +203,8 @@ currentpath = os.getcwd()
 if customs.has_option('options', 'custompath') and os.path.exists(customs.get('options', 'custompath')):
 	resourcepath=customs.get('options', 'custompath')
 # then check steam path
-#elif os.path.isdir(SteamPath + "/steamapps/common/The Binding of Isaac Rebirth/resources"):
-#	resourcepath = SteamPath + "/steamapps/common/The Binding of Isaac Rebirth/resources"
+elif os.path.isdir(SteamPath + "/steamapps/common/The Binding of Isaac Rebirth/resources"):
+	resourcepath = SteamPath + "/steamapps/common/The Binding of Isaac Rebirth/resources"
 else: # if neither, then go through the motions of writing and saving a new path to options
 	feedback.set("")
 	Message(dm, justify = CENTER, font = "font 10", text = "Diversity Mod was unable to find your resources directory.\nNavigate to the program isaac-ng.exe in your Steam directories.", width = 600).grid(row = 0, pady = 10)

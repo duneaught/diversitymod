@@ -43,7 +43,7 @@ Change log:
 
 version 0.6
 - implemented file browser for user to define Rebirth resources folder when it is not automatically found
-- check if Diversity Mod is inside the resources folder, then warn and kill
+- check if Diversity Mod is inside the resources folder, then warn and kill if it is
 - spaced code for readability
 - stopped creating version.txt
 - excluded w9xpopen.exe from final build
