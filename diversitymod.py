@@ -1,5 +1,6 @@
 import shutil, os, ConfigParser
 from Tkinter import *
+from tkFileDialog import askopenfilename
 from random import seed, sample, randint
 from PIL import Image, ImageFont, ImageDraw, ImageTk
 
@@ -166,14 +167,20 @@ def closeDiversityMod():
 	sys.exit()
 	
 def setcustompath():
-	# if path is a good one, set it...
-	if os.path.exists(newcustompath.get()) and os.path.exists(newcustompath.get() + r'\..\isaac-ng.exe'):
-		customs.add_section('options')
-		customs.set('options', 'custompath', newcustompath.get())
-	# write ini file
-	with open('options.ini', 'wb') as configfile:
-		customs.write(configfile)
-	sys.exit()
+	# open file dialog
+	isaacpath = askopenfilename()
+	# check that the file is isaac-ng.exe and the path is good
+	if isaacpath [-12:] == "isaac-ng.exe" and os.path.exists(isaacpath[0:-12] + 'resources'):
+		if not customs.has_section('options'):
+			customs.add_section('options')
+		customs.set('options', 'custompath', isaacpath [0:-12] + 'resources')
+		with open('options.ini', 'wb') as configfile:
+			customs.write(configfile)
+		feedback.set("Your Diversity Mod path has been correctly set.\nClose this window and restart Diversity Mod.")
+	else:
+		feedback.set("That file appears to be incorrect. Please try again to find isaac-ng.exe")
+	dm.update_idletasks()
+	
 	
 version = 0.6
 	
@@ -196,16 +203,15 @@ currentpath = os.getcwd()
 if customs.has_option('options', 'custompath') and os.path.exists(customs.get('options', 'custompath')):
 	resourcepath=customs.get('options', 'custompath')
 # then check steam path
-elif os.path.isdir(SteamPath + "/steamapps/common/The Binding of Isaac Rebirth/resources"):
-	resourcepath = SteamPath + "/steamapps/common/The Binding of Isaac Rebirth/resources"
+#elif os.path.isdir(SteamPath + "/steamapps/common/The Binding of Isaac Rebirth/resources"):
+#	resourcepath = SteamPath + "/steamapps/common/The Binding of Isaac Rebirth/resources"
 else: # if neither, then go through the motions of writing and saving a new path to options
-	newcustompath = StringVar()
-	Message(dm, justify = CENTER, font = "font 12", text = "Diversity Mod was unable to find your resources directory.\nPlease enter the path to The Binding of Isaac Rebirth resources.", width = 600).grid(row = 0, pady = 10)
-	pentry = Entry(dm, justify = LEFT, font = "font 10", textvariable = newcustompath, width = 80).grid(row = 1, padx = 10)
-	Message(dm, justify = LEFT, font = "font 10", text = "Example:\nC:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth\\resources", width = 800).grid(row = 2, pady = 10)
-	Button(dm, font = "font 16", text = "Submit", command = setcustompath).grid(row = 3, pady = 20)
+	feedback.set("")
+	Message(dm, justify = CENTER, font = "font 10", text = "Diversity Mod was unable to find your resources directory.\nNavigate to the program isaac-ng.exe in your Steam directories.", width = 600).grid(row = 0, pady = 10)
+	Message(dm, justify = CENTER, font = "font 12", textvariable = feedback, width = 600).grid(row = 1)
+	Button(dm, font = "font 12", text = "Navigate to isaac-ng.exe", command = setcustompath).grid(row = 2, pady = 10)
+	Message(dm, justify = LEFT, font = "font 10", text = "Example:\nC:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth\isaac-ng.exe", width = 800).grid(row = 3, padx = 15, pady = 10)
 	mainloop()
-	sys.exit()
 	
 # check if you're inside the resources path. give warning and close if necessary.
 if os.path.normpath(resourcepath).lower() in os.path.normpath(currentpath).lower():
@@ -243,7 +249,7 @@ dmicon = ImageTk.PhotoImage(dmiconimage)
 Button(dmbox, image = dmicon, text = '   Install Diversity Mod   ', compound = "left", command = installDiversityMod, font = "font 16").grid(row = 2, pady = 10)
 
 # feedback message display for user
-Label(dm, justify = CENTER, textvariable=feedback).grid(row = 2, column = 0, columnspan = 2)
+Label(dm, justify = CENTER, textvariable = feedback).grid(row = 2, column = 0, columnspan = 2)
 Label(dm, justify = CENTER, text = "Every time you install with a new seed, characters get new random starting items.\nWhen you close this program, Diversity Mod will be uninstalled.").grid(row = 3, column = 0, columnspan = 2)
 
 # button to restart rebirth

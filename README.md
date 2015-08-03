@@ -42,9 +42,11 @@ The Diversity Mod program won't work if it is inside your Rebirth resources fold
 Change log:
 
 version 0.6
+- implemented file browser for user to define Rebirth resources folder when it is not automatically found
 - check if Diversity Mod is inside the resources folder, then warn and kill
-- spaced code
+- spaced code for readability
 - stopped creating version.txt
+- excluded w9xpopen.exe from final build
 
 version 0.5
 - added GUI

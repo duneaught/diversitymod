@@ -12,13 +12,13 @@ installDir = 'target/' + installName + '/'
 
 #then build the option builder using normal py2exe
 sys.argv.append('py2exe')
-#setup(console=['diversitymod.py','WipeRebirthResourcesFolder.py'])
 setup(
 	windows=['diversitymod.py'],
 	options = {
 		'py2exe': {
 			'includes': ['shutil','random','PIL','os','_winreg','Tkinter','ConfigParser'],
-			'bundle_files':2
+			'bundle_files': 1,
+			'dll_excludes': ['w9xpopen.exe']
 		}
 	}
 )
