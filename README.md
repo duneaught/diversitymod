@@ -7,6 +7,10 @@ with much help from Zamiel, Inschato, Hyphenated & #isaac on SpeedRunsLive
 
 ---
 
+To play The Binding of Isaac: Rebirth with Diversity Mod, just run diversitymod.exe. You do not have to move any files or put the program anyplace special. The only requirement is that the Diversity Mod program should not be in the resources folder for Rebirth.
+
+---
+
 Description of the Mod:
 
 All characters start with the D6 except Eden, who gets a random space-use item as usual.
