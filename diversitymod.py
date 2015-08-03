@@ -116,18 +116,20 @@ def installDiversityMod():
 	# make the graphics and install them
 	# create gfx folder structure
 	os.makedirs(resourcepath + '/gfx/ui/main menu/')
-	# open character menu graphic & write the seed on it
-	img = Image.open(currentpath + "/diversitymod files/charactermenu.png")
-	draw = ImageDraw.Draw(img)
+	# open menu graphics & write the seed on them
+	characterimg = Image.open(currentpath + "/diversitymod files/charactermenu.png")
+	titleimg = Image.open(currentpath + "/diversitymod files/titlemenu.png")
+	characterdraw = ImageDraw.Draw(characterimg)
+	titledraw = ImageDraw.Draw(titleimg)
 	smallfont = ImageFont.truetype(os.getcwd() + "/diversitymod files/comicbd.ttf", 10)
 	largefont = ImageFont.truetype(os.getcwd() + "/diversitymod files/comicbd.ttf", 16)
-	w, h = draw.textsize("Diversity Mod v" + str(version) + " Seed", font = smallfont)
-	w2, h2 = draw.textsize(str(dmseed.get()), font = largefont)
-	draw.text((240-w/2, 213), "Diversity Mod v" + str(version) + " Seed", (54, 47, 45), font = smallfont)
-	draw.text((240-w2/2, 225), str(dmseed.get()), (54, 47, 45), font = largefont)
-	img.save(resourcepath + '/gfx/ui/main menu/charactermenu.png')
-	# copy the title screen graphic to resources folder
-	shutil.copyfile(currentpath + '/diversitymod files/titlemenu.png', resourcepath + '/gfx/ui/main menu/titlemenu.png')
+	w, h = characterdraw.textsize("Diversity Mod v" + str(version) + " Seed", font = smallfont)
+	w2, h2 = characterdraw.textsize(str(dmseed.get()), font = largefont)
+	characterdraw.text((240-w/2, 41), "Diversity Mod v" + str(version) + " Seed", (54, 47, 45), font = smallfont)
+	characterdraw.text((240-w2/2, 50), str(dmseed.get()), (54, 47, 45), font = largefont)
+	titledraw.text((440,240), "v" + str(version), (54, 47, 45), font = largefont)
+	characterimg.save(resourcepath + '/gfx/ui/main menu/charactermenu.png')
+	titleimg.save(resourcepath + '/gfx/ui/main menu/titlemenu.png')
 	
 	shutil.copyfile(currentpath + '/diversitymod files/itempools.xml', resourcepath + '/itempools.xml')
 	shutil.copyfile(currentpath + '/diversitymod files/items.xml', resourcepath + '/items.xml')
@@ -234,7 +236,7 @@ for resourcefile in os.listdir(resourcepath):
 		except Exception, e:
 			print e
 
-Label(dm, text = "Diversity mod will create and overwrite files in:\n" + resourcepath).grid(row = 0, column = 0, columnspan = 2, padx = 25, pady = 15)
+Label(dm, text = "Diversity Mod will install in:\n" + resourcepath).grid(row = 0, column = 0, columnspan = 2, padx = 25, pady = 15)
 
 # central gui box
 dmbox = LabelFrame(dm, text = "", padx = 5, pady = 5)
