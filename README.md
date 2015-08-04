@@ -7,7 +7,7 @@ with much help from Zamiel, Inschato, Hyphenated & #isaac on SpeedRunsLive
 
 ---
 
-To play The Binding of Isaac: Rebirth with Diversity Mod, just run diversitymod.exe. You do not have to move any files or put the program anyplace special. The only requirement is that the Diversity Mod program should not be in the resources folder for Rebirth.
+To play The Binding of Isaac: Rebirth with Diversity Mod, just run diversitymod.exe. You do not have to move any files or put the program anyplace special. You do not have to uninstall other mods. The only requirement is that the Diversity Mod program should not be in the resources folder for Rebirth.
 
 ---
 
@@ -36,6 +36,8 @@ Diversity Mod generates and installs mod files based on a user provided seed. If
 The Binding of Isaac: Rebirth must be restarted for changes to take effect. (There's a button for this!)
 
 When Diversity Mod is closed, it uninstalls the mod files it created; so, the program must remain open for the mod to work with Rebirth.
+
+Other installed mods are temporarily moved while Diversity Mod is open, and replaced when Diversity mod is closed.
 
 If the resources directory is not in the default Steam location, Diversity Mod will prompt the user for the rebirth resources path. After a valid path has been entered, run Diversity Mod again, and it should function normally.
 
