@@ -53,15 +53,12 @@ def restartRebirth():
 			os.system('"' + resourcepath + '/../isaac-ng.exe"')
 	except OSError:
 		print("Starting Rebirth failed.\nPress Enter to close.")
-		
-	feedback.set("Rebirth has been restarted!")
 	
 def installDiversityMod():
 	# if no seed entered, generate one
 	if dmseed.get() == '':
 		seed()
 		dmseed.set(str(randint(0,999999)))
-		feedback.set("\nNo seed was entered, so a random seed was generated for you.")
 	# set the RNG seed
 	seed(dmseed.get())
 	
@@ -125,8 +122,8 @@ def installDiversityMod():
 	largefont = ImageFont.truetype(os.getcwd() + "/diversitymod files/comicbd.ttf", 16)
 	w, h = characterdraw.textsize("Diversity Mod v" + str(version) + " Seed", font = smallfont)
 	w2, h2 = characterdraw.textsize(str(dmseed.get()), font = largefont)
-	characterdraw.text((240-w/2, 41), "Diversity Mod v" + str(version) + " Seed", (54, 47, 45), font = smallfont)
-	characterdraw.text((240-w2/2, 50), str(dmseed.get()), (54, 47, 45), font = largefont)
+	characterdraw.text((240-w/2, 38), "Diversity Mod v" + str(version) + " Seed", (54, 47, 45), font = smallfont)
+	characterdraw.text((240-w2/2, 47), str(dmseed.get()), (54, 47, 45), font = largefont)
 	titledraw.text((440,240), "v" + str(version), (54, 47, 45), font = largefont)
 	characterimg.save(resourcepath + '/gfx/ui/main menu/charactermenu.png')
 	titleimg.save(resourcepath + '/gfx/ui/main menu/titlemenu.png')
@@ -143,8 +140,6 @@ def installDiversityMod():
 	shutil.copyfile(currentpath + '/diversitymod files/rooms/08.utero.stb', resourcepath + '/rooms/08.utero.stb')
 	shutil.copyfile(currentpath + '/diversitymod files/rooms/09.sheol.stb', resourcepath + '/rooms/09.sheol.stb')
 	shutil.copyfile(currentpath + '/diversitymod files/rooms/12.chest.stb', resourcepath + '/rooms/12.chest.stb')
-
-	feedback.set("Diversity Mod files have been installed.\nRestart Rebirth to play.")
 
 	# update gui stuffs
 	dm.update_idletasks()
@@ -190,7 +185,6 @@ version = 0.6
 dm = Tk()
 dmseed = StringVar()
 feedback = StringVar()
-feedback.set("Welcome to Diversity Mod!\nKeep this program open while playing isaac.")
 # just the gui icon and title
 dm.iconbitmap("diversitymod files/poop.ico")
 dm.title("Diversity Mod")
@@ -236,13 +230,14 @@ for resourcefile in os.listdir(resourcepath):
 		except Exception, e:
 			print e
 
-Label(dm, text = "Diversity Mod will install in:\n" + resourcepath).grid(row = 0, column = 0, columnspan = 2, padx = 25, pady = 15)
+# show directory that will be written to (commented out)
+#Label(dm, text = "Diversity Mod will install in:\n" + resourcepath).grid(row = 0, column = 0, columnspan = 2, padx = 25, pady = 15)
 
 # central gui box
 dmbox = LabelFrame(dm, text = "", padx = 5, pady = 5)
 dmbox.grid(row = 1, column = 0, columnspan = 2, pady = 15)
 # text entry for seed
-Label(dmbox, text = "Enter seed (case sensitive, empty for random)", font = "font 14").grid(row = 0, pady = 10)
+Label(dmbox, text = "Enter seed (case sensitive, empty for random)", font = "font 13").grid(row = 0, pady = 10)
 sentry = Entry(dmbox, justify = CENTER, font = "font 32 bold", width = 15, textvariable = dmseed)
 sentry.grid(row = 1, padx = 10)
 # button to install mod
@@ -250,9 +245,8 @@ dmiconimage = Image.open("diversitymod files/rainbow.png")
 dmicon = ImageTk.PhotoImage(dmiconimage)
 Button(dmbox, image = dmicon, text = '   Install Diversity Mod   ', compound = "left", command = installDiversityMod, font = "font 16").grid(row = 2, pady = 10)
 
-# feedback message display for user
-Label(dm, justify = CENTER, textvariable = feedback).grid(row = 2, column = 0, columnspan = 2)
-Label(dm, justify = CENTER, text = "Every time you install with a new seed, characters get new random starting items.\nWhen you close this program, Diversity Mod will be uninstalled.").grid(row = 3, column = 0, columnspan = 2)
+# simple instruction display for user
+Label(dm, justify = CENTER, text = "Click Install, then restart Rebirth.\nKeep this program open while playing.\nWhen you Close, Diversity Mod will be uninstalled.", font = "font 12").grid(row = 3, column = 0, columnspan = 2)
 
 # button to restart rebirth
 starticonimage = Image.open("diversitymod files/rebirth.png")
