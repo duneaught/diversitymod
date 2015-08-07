@@ -47,6 +47,9 @@ The Diversity Mod program won't work if it is inside your Rebirth resources fold
 
 Change log:
 
+version 0.7
+- fixed title graphic to not be blurry
+
 version 0.6
 - updated title graphics and character select graphics
 - implemented file browser for user to define Rebirth resources folder when it is not automatically found
