@@ -97,9 +97,9 @@ def installDiversityMod():
 	</players>'''
 	
 	# clear out the files
-	# remove all the files and folders EXCEPT /packed/ and /tmpdm196/
+	# remove all the files and folders EXCEPT packed and dmtmpfolder
 	for resourcefile in os.listdir(resourcepath):
-		if resourcefile != 'packed' and resourcefile != 'tmpdm196' :
+		if resourcefile != 'packed' and resourcefile != dmtmpfolder :
 			if os.path.isfile(os.path.join(resourcepath, resourcefile)):
 				os.unlink(os.path.join(resourcepath, resourcefile))
 			elif os.path.isdir(os.path.join(resourcepath, resourcefile)):
@@ -145,22 +145,22 @@ def installDiversityMod():
 	dm.update_idletasks()
 	
 def closeDiversityMod():
-	# remove all the files and folders EXCEPT /packed/ and /tmpdm196/
+	# remove all the files and folders EXCEPT packed and dmtmpfolder
 	for resourcefile in os.listdir(resourcepath):
-		if resourcefile != 'packed' and resourcefile != 'tmpdm196' :
+		if resourcefile != 'packed' and resourcefile != dmtmpfolder :
 			if os.path.isfile(os.path.join(resourcepath, resourcefile)):
 				os.unlink(os.path.join(resourcepath, resourcefile))
 			elif os.path.isdir(os.path.join(resourcepath, resourcefile)):
 				shutil.rmtree(os.path.join(resourcepath, resourcefile))
 				
-	# copy all the files and folders EXCEPT the 'packed' folder to /tmpdm196/
-	for tmpdm196file in os.listdir(os.path.join(resourcepath, 'tmpdm196')):
-		if os.path.isfile(os.path.join(resourcepath, 'tmpdm196', tmpdm196file)):
-			shutil.copyfile(os.path.join(resourcepath, 'tmpdm196', tmpdm196file), os.path.join(resourcepath, tmpdm196file))
-		elif os.path.isdir(os.path.join(resourcepath, 'tmpdm196', tmpdm196file)):
-			shutil.copytree(os.path.join(resourcepath, 'tmpdm196', tmpdm196file), os.path.join(resourcepath, tmpdm196file))
+	# copy all the files and folders EXCEPT the 'packed' folder to dmtmpfolder
+	for dmtmpfile in os.listdir(os.path.join(resourcepath, dmtmpfolder)):
+		if os.path.isfile(os.path.join(resourcepath, dmtmpfolder, dmtmpfile)):
+			shutil.copyfile(os.path.join(resourcepath, dmtmpfolder, dmtmpfile), os.path.join(resourcepath, dmtmpfile))
+		elif os.path.isdir(os.path.join(resourcepath, dmtmpfolder, dmtmpfile)):
+			shutil.copytree(os.path.join(resourcepath, dmtmpfolder, dmtmpfile), os.path.join(resourcepath, dmtmpfile))
 	# remove the temporary directory we created
-	shutil.rmtree(os.path.join(resourcepath, 'tmpdm196/'))
+	shutil.rmtree(os.path.join(resourcepath, dmtmpfolder))
 	sys.exit()
 	
 def setcustompath():
@@ -179,7 +179,7 @@ def setcustompath():
 	dm.update_idletasks()
 	
 	
-version = 0.6
+version = 0.7
 	
 # dm is the gui, dmseed is the rng seed, feedback is the message for user
 dm = Tk()
@@ -216,17 +216,19 @@ if os.path.normpath(resourcepath).lower() in os.path.normpath(currentpath).lower
 	sys.exit()
 
 # create a folder to temporarily hold files until Diversity Mod is done
-#if not os.path.exists(os.path.join(resourcepath,'tmpdm196'))
-os.mkdir(os.path.join(resourcepath, 'tmpdm196'))
+seed()
+dmtmpfolder = 'divmodtmp' + str(randint(1000000000,9999999999))
+if not os.path.exists(os.path.join(resourcepath, dmtmpfolder)):
+	os.mkdir(os.path.join(resourcepath, dmtmpfolder))
 
-# copy all the files and folders EXCEPT the 'packed' folder to /tmpdm196/
+# copy all the files and folders EXCEPT the 'packed' folder to dmtmpfolder
 for resourcefile in os.listdir(resourcepath):
-	if resourcefile != 'packed' and resourcefile != 'tmpdm196':
+	if resourcefile != 'packed' and resourcefile != dmtmpfolder:
 		try:
 			if os.path.isfile(os.path.join(resourcepath, resourcefile)):
-				shutil.copyfile(os.path.join(resourcepath, resourcefile), os.path.join(resourcepath, "tmpdm196", resourcefile))
+				shutil.copyfile(os.path.join(resourcepath, resourcefile), os.path.join(resourcepath, dmtmpfolder, resourcefile))
 			elif os.path.isdir(os.path.join(resourcepath, resourcefile)):
-				shutil.copytree(os.path.join(resourcepath, resourcefile), os.path.join(resourcepath, "tmpdm196", resourcefile))
+				shutil.copytree(os.path.join(resourcepath, resourcefile), os.path.join(resourcepath, dmtmpfolder, resourcefile))
 		except Exception, e:
 			print e
 

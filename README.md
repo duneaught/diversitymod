@@ -1,9 +1,11 @@
 Diversity Mod for The Binding of Isaac: Rebirth
 
-version 0.6
+version 0.7
 
 Created by DuneAught (twitter: @duneaught)
 with much help from Zamiel, Inschato, Hyphenated & #isaac on SpeedRunsLive
+
+Source and download available at https://github.com/duneaught/diversitymod ('Resources' tab for download)
 
 ---
 
@@ -48,6 +50,7 @@ The Diversity Mod program won't work if it is inside your Rebirth resources fold
 Change log:
 
 version 0.7
+- changed temporary folder to be a random name
 - fixed title graphic to not be blurry
 
 version 0.6
