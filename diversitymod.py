@@ -254,15 +254,16 @@ for resourcefile in os.listdir(resourcepath):
 		except Exception, e:
 			print e
 
+
 # central gui box
 dmbox = LabelFrame(dm, text = "", padx = 5, pady = 5)
-dmbox.grid(row = 1, column = 0, columnspan = 2, pady = 15)
+dmbox.grid(row = 1, column = 0, columnspan = 2, pady = 20)
 # text entry for seed
 Label(dmbox, text = "Enter seed (case sensitive)", font = "font 14").grid(row = 0, column = 0, pady = 10)
 sentry = Entry(dmbox, justify = CENTER, font = "font 32 bold", width = 15, textvariable = entryseed)
 sentry.configure(bg = '#f4e6e6')
 sentry.bind("<Return>", (lambda event: installDiversityMod()))
-sentry.grid(row = 1, padx = 10, columnspan = 2, pady = 5)
+sentry.grid(row = 1, padx = 7, columnspan = 2, pady = 5)
 # button to choose a new random seed
 dmrandimage = Image.open("diversitymod files/d100.png")
 dmrandicon = ImageTk.PhotoImage(dmrandimage)
@@ -274,14 +275,15 @@ dmicon = ImageTk.PhotoImage(dmiconimage)
 Button(dm, image = dmicon, text = '   Start Diversity Mod   ', compound = "left", command = installDiversityMod, font = "font 16").grid(row = 3, pady = 7, columnspan = 2)
 
 # simple instruction display for user
-Message(dm, justify = CENTER, text = "\nWhen you click Start,\nRebirth will reopen with the new Diversity mod seed.", font = "font 13", width = 500).grid(row = 4, column = 0, columnspan = 2, padx = 50)
-Message(dm, justify = CENTER, text = "Keep this program open while playing.", font = "font 13", width = 500).grid(row = 5, column = 0, columnspan = 2, padx = 50)
-Message(dm, justify = CENTER, text = "Diversity Mod will uninstall when you click Close.", font = "font 13", width = 500).grid(row = 6, column = 0, columnspan = 2, padx = 50)
+Message(dm, justify = CENTER, text = "\nRebirth will open when you click Start.", font = "font 13", width = 475).grid(row = 4, column = 0, columnspan = 2, padx = 20)
+Message(dm, justify = CENTER, text = "Start again and again with new seeds for more Diversity.", font = "font 13", width = 475).grid(row = 5, column = 0, columnspan = 2, padx = 20)
+Message(dm, justify = CENTER, text = "Keep this program open while playing.", font = "font 13", width = 475).grid(row = 6, column = 0, columnspan = 2, padx = 20)
+Message(dm, justify = CENTER, text = "Rebirth returns to normal when this program is closed.\n\n", font = "font 13", width = 500).grid(row = 7, column = 0, columnspan = 2, padx = 20)
 
 # button to uninstall and close diversity mod
-closeiconimage = Image.open("diversitymod files/forgetmenow.png")
-closeicon = ImageTk.PhotoImage(closeiconimage)
-Button(dm, text = '  Close Diversity Mod  ', image = closeicon, compound = "right", font = "font 14", command = closeDiversityMod).grid(row = 7, columnspan = 2, padx = 7, pady = 20)
+#closeiconimage = Image.open("diversitymod files/forgetmenow.png")
+#closeicon = ImageTk.PhotoImage(closeiconimage)
+#Button(dm, text = '  Close Diversity Mod  ', image = closeicon, compound = "right", font = "font 14", command = closeDiversityMod).grid(row = 7, columnspan = 2, padx = 7, pady = 20)
 
 # also uninstall if the window is closed
 dm.protocol("WM_DELETE_WINDOW", closeDiversityMod)

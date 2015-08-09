@@ -5,7 +5,7 @@ version 0.7
 Created by DuneAught (twitter: @duneaught)
 with much help from Zamiel, Inschato, Hyphenated & #isaac on SpeedRunsLive
 
-Source and download available at https://github.com/duneaught/diversitymod ('Resources' tab for download)
+Source available at https://github.com/duneaught/diversitymod ('Resources' tab for download)
 
 ---
 
@@ -33,24 +33,29 @@ Room modifications are taken directly from Balls of Steel Weekly mod 1.2:
 
 How the Diversity Mod program works:
 
-Diversity Mod generates and installs mod files based on a user provided seed. If no seed is provided, a random seed will be generated.
+The Diversity Mod program generates and installs mod files based on a user provided seed. If no seed is provided, a random seed will be generated.
 
-The Binding of Isaac: Rebirth must be restarted for changes to take effect. (There's a button for this!)
+When the Diversity Mod program is opened, other installed Rebirth mods are moved to a temporary folder next to the Rebirth resources folder.
 
-When Diversity Mod is closed, it uninstalls the mod files it created and restores previously installed mods; so, the program must remain open for the mod to work.
+The Diversity Mod program must remain open for the mod to work, because it restores previously installed mods when closed.
 
-When Diversity Mod is opened, previously installed mods are moved to a temporary folder.
+If the Rebirth is not in the default Steam location, the Diversity Mod program will prompt the user for the path to the Rebirth game files.
 
-If the resources directory is not in the default Steam location, Diversity Mod will prompt the user for the path to the Rebirth game files.
-
-The Diversity Mod program won't work if it is inside your Rebirth resources folder.
+The Diversity Mod program won't work if it is inside the Rebirth resources folder.
 
 ---
 
 Change log:
 
 version 0.7
-- changed temporary folder to be a random name
+- some README rewording
+- removed "Close Diversity Mod" button, just use the X
+- removes leading/trailing spaces from seed on Start
+- added random seed generator button
+- condensed install and restart buttons into a single button
+- added colored background to seed field, blue when entry matches installed
+- moved temporary folder to be next to the resources folder, instead of within
+- changed temporary folder name to include a random number
 - fixed title graphic to not be blurry
 
 version 0.6
