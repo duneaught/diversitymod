@@ -13,7 +13,7 @@ installDir = 'target/' + installName + '/'
 #then build the option builder using normal py2exe
 sys.argv.append('py2exe')
 setup(
-	windows=['diversitymod.py'],
+	windows = ['diversitymod.py'],
 	options = {
 		'py2exe': {
 			'includes': ['shutil','random','PIL','os','_winreg','Tkinter','ConfigParser'],
