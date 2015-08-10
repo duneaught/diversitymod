@@ -48,8 +48,7 @@ The Diversity Mod program won't work if it is inside the Rebirth resources folde
 Change log:
 
 version 0.7
-- added ability to hit <Return> to start without clicking the Start button
-- some README rewording
+- added ability to press Enter to start without clicking the Start button
 - removed "Close Diversity Mod" button, just use the X
 - removes leading/trailing spaces from seed on Start
 - added random seed generator button
