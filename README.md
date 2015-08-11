@@ -5,13 +5,13 @@ version 0.7
 Created by DuneAught (twitter: @duneaught)
 with much help from Hyphenated, Inschato, pears, Zamiel & #isaac on SpeedRunsLive
 
-To play The Binding of Isaac: Rebirth with Diversity Mod, just run diversitymod.exe. You do not have to move any files nor uninstall other mods. The only requirement is that the Diversity Mod program should not be in the resources folder for Rebirth.
+To play The Binding of Isaac: Rebirth with Diversity Mod, just run diversitymod.exe. You do not have to move any files or uninstall other mods.
 
 Download here: https://github.com/duneaught/diversitymod/releases
 
 
-Description of the Mod:
------------------------
+Description
+-----------
 
 All characters start with the D6 except Eden, who gets a random space-use item as usual.
 
@@ -22,14 +22,15 @@ Four items (Mom's Knife, Brimstone, IPECAC, & Epic Fetus) have been removed from
 The Special Item status has been removed from the game.
 
 Room modifications are taken directly from Balls of Steel Weekly mod 1.2:
-- All Donation Machines have been removed.
-- Angel Rooms that offer only soul hearts or eternal hearts have been removed, so Angel Rooms are guaranteed to have one pedestal and an Angel statue.
-- Mimics and Doppelgangers spawn off center so the player is not hit upon entering the room.
-- Some enemies that spawn close to doors are moved toward the center of the room to prevent unavoidable damage.
+
+* All Donation Machines have been removed.
+* Angel Rooms that offer only soul hearts or eternal hearts have been removed, so Angel Rooms are guaranteed to have one pedestal and an Angel statue.
+* Mimics and Doppelgangers spawn off center so the player is not hit upon entering the room.
+* Some enemies that spawn close to doors are moved toward the center of the room to prevent unavoidable damage.
 
 
-How the Diversity Mod program works:
-------------------------------------
+The Diversity Mod Program
+-------------------------
 
 The Diversity Mod program generates and installs mod files when you click "Start Diversity Mod".
 
@@ -44,16 +45,19 @@ If Rebirth is not in the default Steam location, the Diversity Mod program will 
 The Diversity Mod program won't work if it is inside the Rebirth resources folder.
 
 
-Known issues
+Known Issues
 ------------
 
 * Randomly chosen items can be the same as the starting items of characters. (e.g. Cain can start with 2 lucky feet.)
+* The Diversity Mod program will not work if it is in the resources folder for Rebirth.
 * The program is not currently compatible with Linux/Mac.
 
-22 Passive items are EXCLUDED from the random starting items.
--------------------------------------------------------------
 
-### Listed by Item ID & Name
+Random Passive Starting Items
+-----------------------------
+
+22 Passive items are EXCLUDED from the random starting items, listed here by Item ID & Name
+
 * 15	<3
 * 16	Raw Liver
 * 22	Lunch
@@ -66,20 +70,20 @@ Known issues
 * 31	Moms Lipstick
 * 92	Super Bandage
 * 119	Blood Bag
-* 176	Stem cells
+* 176	Stem Cells
 * 194	Magic 8 Ball
 * 226	Black Lotus
 * 238	Key Piece #1
 * 239	Key Piece #2
-* 253	Magic scab
+* 253	Magic Scab
 * 334	The Body
 * 339	Safety Pin
 * 344	Match Book
 * 346	A Snack
 
 
-Change log:
------------
+Change Log
+----------
 
 ### version 0.7
 * added ability to press Enter to start without clicking the Start button
