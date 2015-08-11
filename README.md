@@ -1,5 +1,5 @@
 Diversity Mod for The Binding of Isaac: Rebirth
-===============================================
+-----------------------------------------------
 version 0.7
 
 Created by DuneAught (twitter: @duneaught)
@@ -17,9 +17,9 @@ All characters start with the D6 except Eden, who gets a random space-use item a
 
 All characters start with 3 additional random passive items, keeping their original items and resources.
 
-Four items (Mom's Knife, Brimstone, IPECAC, & Epic Fetus) have been removed from their respective item pools. They may be assigned as random starting items, but they will not appear in game during a playthrough.
+Four items (Mom's Knife, Brimstone, IPECAC, & Epic Fetus) are removed from their respective item pools. They may be assigned as random starting items, but they will not appear in game during a playthrough.
 
-The Special Item status has been removed from the game.
+The Special Item status is removed from the game.
 
 Room modifications are taken directly from Balls of Steel Weekly mod 1.2:
 
@@ -42,14 +42,13 @@ The Diversity Mod program must remain open for the mod to work, because it resto
 
 If Rebirth is not in the default Steam location, the Diversity Mod program will prompt the user for the path to the Rebirth game files.
 
-The Diversity Mod program won't work if it is inside the Rebirth resources folder.
+The Diversity Mod program will not work if it is inside the Rebirth resources folder.
 
 
 Known Issues
 ------------
 
 * Randomly chosen items can be the same as the starting items of characters. (e.g. Cain can start with 2 lucky feet.)
-* The Diversity Mod program will not work if it is in the resources folder for Rebirth.
 * The program is not currently compatible with Linux/Mac.
 
 
