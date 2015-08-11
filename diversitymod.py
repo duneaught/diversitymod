@@ -98,7 +98,9 @@ def installDiversityMod():
 	file = open(resourcepath + "/players.xml", "w")
 	file.write(pxmlString)
 	file.close()
-	
+        with open("diversity_seed.txt", "w") as f:
+            f.write(dmseed)
+            
 	# make the graphics and install them
 	# create gfx folder structure
 	os.makedirs(resourcepath + '/gfx/ui/main menu/')
