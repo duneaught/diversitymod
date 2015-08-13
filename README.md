@@ -32,7 +32,7 @@ Room modifications are taken directly from Balls of Steel Weekly mod 1.2:
 The Diversity Mod Program
 -------------------------
 
-The Diversity Mod program generates and installs mod files when you click "Start Diversity Mod".
+The Diversity Mod program generates and installs mod files when you click "Start Diversity Mod". Then it restarts The Binding of Isaac: Rebirth game.
 
 Characters are assigned random starting items based on a user provided seed. If no seed is provided, a random seed will be generated.
 
@@ -48,6 +48,8 @@ The Diversity Mod program will not work if it is inside the Rebirth resources fo
 Known Issues
 ------------
 
+* Unicode seeds don't work, use ASCII only
+* ctrl+a doesn't select all in the seed entry field, use ctrl+/ instead
 * Randomly chosen items can be the same as the starting items of characters. (e.g. Cain can start with 2 lucky feet.)
 * The program is not currently compatible with Linux/Mac.
 
@@ -55,7 +57,9 @@ Known Issues
 Random Passive Starting Items
 -----------------------------
 
-22 Passive items are EXCLUDED from the random starting items, listed here by Item ID & Name
+Twenty-two passive items are EXCLUDED from the random starting items, listed here by Item ID & Name.
+
+All other passive items have an equal chance of selection.
 
 * 15	<3
 * 16	Raw Liver

@@ -1,7 +1,8 @@
 import shutil, os, ConfigParser
+from string import ascii_uppercase, digits
 from Tkinter import *
 from tkFileDialog import askopenfilename
-from random import seed, sample, randint
+from random import seed, sample, randint, choice
 from PIL import Image, ImageFont, ImageDraw, ImageTk
 
 ##
@@ -35,14 +36,18 @@ SteamPath = regkey_value(r"HKEY_CURRENT_USER\Software\Valve\Steam", "SteamPath")
 ## end of copied stuff
 ##
 
+def newRandomSeed():
+	seed()
+	mysterySeed = ''.join(choice(ascii_uppercase + digits) for _ in range(6))
+	entryseed.set(mysterySeed)
+
 def installDiversityMod():
 	# trim the whitespace on the string if there is any
 	s = entryseed.get()
 	entryseed.set(s.strip())
 	# if no seed entered, generate one
 	if entryseed.get() == '':
-		seed()
-		entryseed.set(str(randint(0,999999)))
+		newRandomSeed()
 	# set the RNG seed
 	global dmseed
 	dmseed = entryseed.get()
@@ -187,11 +192,6 @@ def setcustompath():
 		feedback.set("That file appears to be incorrect. Please try again to find isaac-ng.exe")
 	dm.update_idletasks()
 
-def newRandomSeed():
-	seed()
-	entryseed.set(str(randint(0,999999)))
-	sentry.configure(bg = '#f4e6e6')
-
 def checkInstalled(*args):
 	if 'dmseed' in globals():
 		# set background to indicate that current entry is active
@@ -199,7 +199,7 @@ def checkInstalled(*args):
 			sentry.configure(bg = '#d8fbf8')
 		else:
 			sentry.configure(bg = '#f4e6e6')
-	
+
 version = 0.7
 	
 # dm is the gui, entryseed is the rng seed, feedback is the message for user
@@ -265,6 +265,7 @@ Label(dmbox, text = "Enter seed (case sensitive)", font = "font 14").grid(row = 
 sentry = Entry(dmbox, justify = CENTER, font = "font 32 bold", width = 15, textvariable = entryseed)
 sentry.configure(bg = '#f4e6e6')
 sentry.bind("<Return>", (lambda event: installDiversityMod()))
+#sentry.bind('<Control-a>', self.ctext_selectall)
 sentry.grid(row = 1, padx = 7, columnspan = 2, pady = 5)
 # button to choose a new random seed
 dmrandimage = Image.open("diversitymod files/d100.png")

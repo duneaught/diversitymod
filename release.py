@@ -16,7 +16,7 @@ setup(
 	windows = ['diversitymod.py'],
 	options = {
 		'py2exe': {
-			'includes': ['shutil','random','PIL','os','_winreg','Tkinter','ConfigParser'],
+			'includes': ['shutil','random','PIL','os','_winreg','Tkinter','ConfigParser','string'],
 			'bundle_files': 1,
 			'dll_excludes': ['w9xpopen.exe']
 		}
