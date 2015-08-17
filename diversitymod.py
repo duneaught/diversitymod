@@ -46,7 +46,7 @@ def newRandomSeed():
 def installDiversityMod():
 	# trim the whitespace on the string if there is any
 	s = entryseed.get()
-	entryseed.set(s.strip())
+	entryseed.set(s.strip().encode('ascii','replace'))
 	# if no seed entered, generate one
 	if entryseed.get() == '':
 		newRandomSeed()
@@ -64,31 +64,31 @@ def installDiversityMod():
 	# random permutation of valid items list
 	itemIDs = list(valid_items)
 	shuffle(itemIDs)
-	for x in range(4, 6): # cain
+	for x in range(4, 7): # cain
 		if itemIDs[x] == 46:
 			itemIDs.append(itemIDs[x])
 			del itemIDs[x]
-	for x in range(12, 14): # blue baby
+	for x in range(12, 15): # blue baby
 		while itemIDs[x] in [62, 96, 218, 219, 311, 312, 332]:
 			itemIDs.append(itemIDs[x])
 			del itemIDs[x]
-	for x in range(15, 17): # eve
+	for x in range(15, 18): # eve
 		while itemIDs[x] in [122, 117]:
 			itemIDs.append(itemIDs[x])
 			del itemIDs[x]
-	for x in range(18, 20): # samson
+	for x in range(18, 21): # samson
 		if itemIDs[x] == 157:
 			itemIDs.append(itemIDs[x])
 			del itemIDs[x]
-	for x in range(21, 23): # azazel
+	for x in range(21, 24): # azazel
 		while itemIDs[x] in [3, 5, 20, 48, 53, 60, 68, 82, 104, 115, 118, 150, 159, 179, 184, 185, 224, 229, 245, 306, 317, 336]:
 			itemIDs.append(itemIDs[x])
 			del itemIDs[x]
-	for x in range(24, 26): # lazarus
+	for x in range(24, 27): # lazarus
 		if itemIDs[x] == 332:
 			itemIDs.append(itemIDs[x])
 			del itemIDs[x]
-	for x in range(30, 32): # the lost
+	for x in range(30, 33): # the lost
 		while itemIDs[x] in [20, 60, 62, 96, 98, 108, 117, 142, 148, 156, 157, 161, 162, 173, 178, 180, 204, 205, 211, 214, 218, 219, 225, 227, 262, 274, 278, 311, 312, 327, 328, 332]:
 			itemIDs.append(itemIDs[x])
 			del itemIDs[x]
@@ -333,12 +333,7 @@ Message(dm, justify = CENTER, text = "Start again and again with new seeds for m
 Message(dm, justify = CENTER, text = "Keep this program open while playing.", font = "font 13", width = 475).grid(row = 6, column = 0, columnspan = 2, padx = 20)
 Message(dm, justify = CENTER, text = "Rebirth returns to normal when this program is closed.\n\n", font = "font 13", width = 500).grid(row = 7, column = 0, columnspan = 2, padx = 20)
 
-# button to uninstall and close diversity mod
-#closeiconimage = Image.open("diversitymod files/forgetmenow.png")
-#closeicon = ImageTk.PhotoImage(closeiconimage)
-#Button(dm, text = '  Close Diversity Mod  ', image = closeicon, compound = "right", font = "font 14", command = closeDiversityMod).grid(row = 7, columnspan = 2, padx = 7, pady = 20)
-
-# also uninstall if the window is closed
+# uninstall mod files when the window is closed
 dm.protocol("WM_DELETE_WINDOW", closeDiversityMod)
 
 mainloop( )
