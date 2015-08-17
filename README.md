@@ -86,50 +86,7 @@ All other passive items have an equal chance of selection.
 * 346	A Snack
 
 
-Change Log
-----------
+History
+-------
 
-### version 0.7
-* added ability to press Enter to start without clicking the Start button
-* removed "Close Diversity Mod" button, just use the X
-* removes leading/trailing spaces from seed on Start
-* added random seed generator button
-* condensed install and restart buttons into a single button
-* added colored background to seed field, blue when entry matches installed
-* moved temporary folder to be next to the resources folder, instead of within
-* changed temporary folder name to include a random number
-* fixed title graphic to not be blurry
-
-### version 0.6
-* updated title graphics and character select graphics
-* implemented file browser for user to define Rebirth resources folder when it is not automatically found
-* check if Diversity Mod is inside the resources folder, then warn and kill if it is
-* spaced code for readability
-* stopped creating version.txt
-* excluded w9xpopen.exe from final build
-
-### version 0.5
-* added GUI
-* added options.ini to hold custom path
-* user is prompted to provide a valid path when the program can't find their steam path
-* Diversity Mod files are removed and previous mods are restored when the program is closed
-* gave Eden 3 random passive items, but she still gets a random spacebar item
-
-### version 0.4+
-* packaged with WipeRebirthResourcesFolder for easy uninstall
-
-### version 0.4
-* automatically starts (or restarts) isaac-ng.exe
-* generates a random seed when no seed is entered
-* fixed so A Quarter (ID74) is a possible starting item
-* changed to have an INCLUDE list instead of an EXCLUDE list
-* changed random starting items method to random.sample()
-
-### version 0.3
-* added Super Bandage (ID92), Blood Bag (ID119), Magic 8 Ball (ID194), Black Lotus (226), & The Body (ID334) to list of excluded passives
-* renamed diversitymod.txt to README.md
-
-### version 0.2
-* changed possible starting items to all passive items from all pools (excluding 17 boring items)
-* added version number to character select screen graphic
-* made minor changes to the prompts and text output
+For full version history, see: https://github.com/duneaught/diversitymod/releases
