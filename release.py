@@ -20,7 +20,8 @@ setup(
 			'bundle_files': 1,
 			'dll_excludes': ['w9xpopen.exe']
 		}
-	}
+	},
+	zipfile = None
 )
 
 shutil.copytree('dist/', installDir)

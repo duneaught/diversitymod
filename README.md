@@ -52,6 +52,7 @@ Known Issues
 * ctrl+a doesn't select all in the seed entry field, use ctrl+/ instead
 * Randomly chosen items can be the same as the starting items of characters. (e.g. Cain can start with 2 lucky feet.)
 * The program is not currently compatible with Linux/Mac.
+* When the program closes unexpectedly, it leaves mod files installed. To fix, see: http://pastebin.com/mfreKXXT
 
 
 Random Passive Starting Items

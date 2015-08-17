@@ -6,7 +6,7 @@ from random import seed, sample, randint, choice
 from PIL import Image, ImageFont, ImageDraw, ImageTk
 
 ##
-## Get Steam path (verbatim lines from http://pastebin.com/z89Gr9NM)
+## Get Steam path ( lines from http://code.activestate.com/recipes/578689-get-a-value-un-windows-registry/ )
 ##
 
 import _winreg
@@ -37,10 +37,11 @@ SteamPath = regkey_value(r"HKEY_CURRENT_USER\Software\Valve\Steam", "SteamPath")
 ##
 
 def newRandomSeed():
+	global seedIsRNG
 	seed()
-	mysterySeed = ''.join(choice(ascii_uppercase + digits) for _ in range(6))
-	entryseed.set(mysterySeed)
-
+	seedIsRNG = ''.join(choice(ascii_uppercase + digits) for _ in range(6))
+	entryseed.set(seedIsRNG)
+	
 def installDiversityMod():
 	# trim the whitespace on the string if there is any
 	s = entryseed.get()
@@ -118,8 +119,14 @@ def installDiversityMod():
 	largefont = ImageFont.truetype(os.getcwd() + "/diversitymod files/comicbd.ttf", 16)
 	w, h = characterdraw.textsize("Diversity Mod v" + str(version) + " Seed", font = smallfont)
 	w2, h2 = characterdraw.textsize(str(entryseed.get()), font = largefont)
-	characterdraw.text((240-w/2, 38), "Diversity Mod v" + str(version) + " Seed", (54, 47, 45), font = smallfont)
-	characterdraw.text((240-w2/2, 47), str(entryseed.get()), (54, 47, 45), font = largefont)
+	w3, h3 = characterdraw.textsize("(random)", font = smallfont)
+	characterdraw.text((240-w/2, 31), "Diversity Mod v" + str(version) + " Seed", (54, 47, 45), font = smallfont)
+	characterdraw.text((240-w2/2, 41), str(entryseed.get()), (54, 47, 45), font = largefont)
+	try:
+		if entryseed.get() == seedIsRNG:
+			characterdraw.text((240-w3/2, 59), "(random)", (54, 47, 45), font = smallfont)
+	except NameError:
+		print 'error?'
 	titledraw.text((440,240), "v" + str(version), (54, 47, 45), font = largefont)
 	characterimg.save(resourcepath + '/gfx/ui/main menu/charactermenu.png')
 	titleimg.save(resourcepath + '/gfx/ui/main menu/titlemenu.png')
@@ -199,6 +206,7 @@ def checkInstalled(*args):
 			sentry.configure(bg = '#d8fbf8')
 		else:
 			sentry.configure(bg = '#f4e6e6')
+
 
 version = 0.7
 	
