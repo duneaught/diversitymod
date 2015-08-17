@@ -45,12 +45,17 @@ If Rebirth is not in the default Steam location, the Diversity Mod program will 
 The Diversity Mod program will not work if it is inside the Rebirth resources folder.
 
 
+History
+-------
+
+For full version history, see: https://github.com/duneaught/diversitymod/releases
+
+
 Known Issues
 ------------
 
 * Unicode seeds don't work, use ASCII only
 * ctrl+a doesn't select all in the seed entry field, use ctrl+/ instead
-* Randomly chosen items can be the same as the starting items of characters. (e.g. Cain can start with 2 lucky feet.)
 * The program is not currently compatible with Linux/Mac.
 * When the program closes unexpectedly, it leaves mod files installed. To fix, see: http://pastebin.com/mfreKXXT
 
@@ -58,35 +63,99 @@ Known Issues
 Random Passive Starting Items
 -----------------------------
 
-Twenty-two passive items are EXCLUDED from the random starting items, listed here by Item ID & Name.
+Some passive items are EXCLUDED from the random starting items. Characters cannot start with two of the same item. Blue Baby, Azazel, and The Lost have additional exclusions.
 
-All other passive items have an equal chance of selection.
+### Exclusions for All Characters
 
-* 15	<3
-* 16	Raw Liver
-* 22	Lunch
-* 23	Dinner
-* 24	Dessert
-* 25	Breakfast
-* 26	Rotten Meat
-* 29	Moms Underwear
-* 30	Moms Heels
-* 31	Moms Lipstick
-* 92	Super Bandage
-* 119	Blood Bag
-* 176	Stem Cells
-* 194	Magic 8 Ball
-* 226	Black Lotus
-* 238	Key Piece #1
-* 239	Key Piece #2
-* 253	Magic Scab
-* 334	The Body
-* 339	Safety Pin
-* 344	Match Book
-* 346	A Snack
+* 15 - <3
+* 16 - Raw Liver
+* 22 - Lunch
+* 23 - Dinner
+* 24 - Dessert
+* 25 - Breakfast
+* 26 - Rotten Meat
+* 29 - Moms Underwear
+* 30 - Moms Heels
+* 31 - Moms Lipstick
+* 92 - Super Bandage
+* 119 - Blood Bag
+* 176 - Stem Cells
+* 194 - Magic 8 Ball
+* 226 - Black Lotus
+* 238 - Key Piece #1
+* 239 - Key Piece #2
+* 253 - Magic Scab
+* 334 - The Body
+* 339 - Safety Pin
+* 344 - Match Book
+* 346 - A Snack
 
+### Blue Baby Exclusions
 
-History
--------
+* 62 - Charm of the Vampire
+* 96 - Little C.H.A.D.
+* 218 - Placenta
+* 219 - Old Bandage
+* 311 - Judas' Shadow
+* 312 - Maggy's Bow
+* 332 - Lazarus' Rags
 
-For full version history, see: https://github.com/duneaught/diversitymod/releases
+### Azazel Exclusions
+
+* 3 - Spoon Bender
+* 5 - My Reflection
+* 20 - Transcendence
+* 48 - Cupids Arrow
+* 53 - Magneto
+* 60 - The Ladder
+* 68 - Technology
+* 82 - Lord of the Pit
+* 104 - The Parasite
+* 115 - Ouija Board
+* 118 - Brimstone
+* 150 - Tough Love
+* 159 - Spirit of the Night
+* 179 - Fate
+* 184 - Holy Grail
+* 185 - Dead Dove
+* 224 - Cricket's Body
+* 229 - Monstro's Lung
+* 245 - 20/20
+* 306 - Sagittarius
+* 317 - Mysterious Liquid
+* 336 - Dead Onion
+
+### The Lost Exclusions
+
+* 20 - Transcendence
+* 60 - The Ladder
+* 62 - Charm of the Vampire
+* 96 - Little C.H.A.D.
+* 98 - The Relic
+* 108 - The Wafer
+* 117 - Dead Bird
+* 142 - Scapular
+* 148 - Infestation
+* 156 - Habit
+* 157 - Blood Lust
+* 161 - Ankh
+* 162 - Celtic Cross
+* 173 - Mitre
+* 178 - Holy Water
+* 180 - The Black Bean
+* 204 - Fanny Pack
+* 205 - Sharp Plug
+* 211 - Spiderbaby
+* 214 - Anemic
+* 218 - Placenta
+* 219 - Old Bandage
+* 225 - Gimpy
+* 227 - Piggy Bank
+* 262 - Missing page 2
+* 274 - Best Bud
+* 278 - Dark Bum
+* 311 - Judas' Shadow
+* 312 - Maggy's Bow
+* 327 - The Polaroid
+* 328 - The Negative
+* 332 - Lazarus' Rags
