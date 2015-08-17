@@ -4,6 +4,7 @@ from Tkinter import *
 from tkFileDialog import askopenfilename
 from random import seed, sample, randint, choice
 from PIL import Image, ImageFont, ImageDraw, ImageTk
+from binascii import crc32
 
 ##
 ## Get Steam path ( lines from http://code.activestate.com/recipes/578689-get-a-value-un-windows-registry/ )
@@ -52,7 +53,7 @@ def installDiversityMod():
 	# set the RNG seed
 	global dmseed
 	dmseed = entryseed.get()
-	seed(dmseed)
+	seed(crc32(dmseed))
 	
 	# set background to indicate that current entry is active
 	sentry.configure(bg = '#d8fbf8')
