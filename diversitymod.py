@@ -164,7 +164,13 @@ def installDiversityMod():
 	characterimg.save(resourcepath + '/gfx/ui/main menu/charactermenu.png')
 	titleimg.save(resourcepath + '/gfx/ui/main menu/titlemenu.png')
 	
-	shutil.copyfile(currentpath + '/diversitymod files/itempools.xml', resourcepath + '/itempools.xml')
+	# copy the no-blood-rights item pools if isaac's heart is in any of the characters' starting items
+	print str(itemIDs[0]) + ' to ' + str(itemIDs[32])
+	print str(itemIDs[0:33])
+	if 276 in itemIDs[0:33]:
+		shutil.copyfile(currentpath + '/diversitymod files/itempools_nobloodrights.xml', resourcepath + '/itempools.xml')
+	else:
+		shutil.copyfile(currentpath + '/diversitymod files/itempools.xml', resourcepath + '/itempools.xml')
 	shutil.copyfile(currentpath + '/diversitymod files/items.xml', resourcepath + '/items.xml')
 	
 	os.makedirs(resourcepath + '/rooms/')

@@ -3,7 +3,7 @@ Diversity Mod for The Binding of Isaac: Rebirth
 version 0.7
 
 Created by DuneAught (twitter: @duneaught)
-with much help from Hyphenated, Inschato, pears, Zamiel & #isaac on SpeedRunsLive
+with much help from awerush, Hyphenated, Inschato, pears, Zamiel & #isaac on SpeedRunsLive
 
 To play The Binding of Isaac: Rebirth with Diversity Mod, just run diversitymod.exe. You do not have to move any files or uninstall other mods.
 
@@ -54,7 +54,7 @@ For full version history, see: https://github.com/duneaught/diversitymod/release
 Known Issues
 ------------
 
-* Unicode seeds don't work, use ASCII only
+* Unicode seeds don't work, use ASCII
 * ctrl+a doesn't select all in the seed entry field, use ctrl+/ instead
 * The program is not currently compatible with Linux/Mac.
 * When the program closes unexpectedly, it leaves mod files installed. To fix, see: http://pastebin.com/mfreKXXT
@@ -62,6 +62,8 @@ Known Issues
 
 Random Passive Starting Items
 -----------------------------
+
+If any character gets Isaac's Heart as a random starting item, Blood Rights is removed from the Treasure Room pool and will not be found in game.
 
 Some passive items are EXCLUDED from the random starting items. Characters cannot start with two of the same item. Blue Baby, Azazel, and The Lost have additional exclusions.
 
