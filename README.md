@@ -17,7 +17,7 @@ All characters start with the D6 except Eden, who gets a random space-use item a
 
 All characters start with 3 additional random passive items, keeping their original items and resources.
 
-Four items (Mom's Knife, Brimstone, IPECAC, & Epic Fetus) are removed from their respective item pools. They may be assigned as random starting items, but they will not appear in game during a playthrough.
+Three items (Mom's Knife, Brimstone, & Epic Fetus) are removed from their respective item pools. They may be assigned as random starting items, but they will not appear in game during a playthrough.
 
 The Special Item status is removed from the game.
 

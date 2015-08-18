@@ -186,6 +186,8 @@
 		<Item Id="147" Weight="1" DecreaseBy="1.0" RemoveOn="0.1"/>
 		<!--Infestation-->
 		<Item Id="148" Weight="1" DecreaseBy="1.0" RemoveOn="0.1"/>
+		<!--Ipecac-->
+		<Item Id="149" Weight="1" DecreaseBy="1.0" RemoveOn="0.1"/>
 		<!--Tough love-->
 		<Item Id="150" Weight="1" DecreaseBy="1.0" RemoveOn="0.1"/>
 		<!--The Mulligan-->
