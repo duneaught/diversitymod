@@ -249,7 +249,7 @@ def checkInstalled(*args):
 			sentry.configure(bg = '#f4e6e6')
 
 
-version = 0.7
+version = 0.8
 	
 # dm is the gui, entryseed is the rng seed, feedback is the message for user
 dm = Tk()
