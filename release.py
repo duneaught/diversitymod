@@ -2,7 +2,7 @@ import os, sys, shutil, py2exe
 from distutils.core import setup
 
 #Here is where you can set the name for the release zip file and for the install dir inside it.
-version = "0.7"
+version = "0.8"
 installName = 'DiversityMod-' + version
 
 #target is where we assemble our final install. dist is where py2exe produces exes and their dependencies
