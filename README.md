@@ -45,16 +45,9 @@ If Rebirth is not in the default Steam location, the Diversity Mod program will 
 The Diversity Mod program will not work if it is inside the Rebirth resources folder.
 
 
-History
--------
-
-For full version history, see: https://github.com/duneaught/diversitymod/releases
-
-
 Known Issues
 ------------
 
-* Unicode seeds don't work, use ASCII
 * ctrl+a doesn't select all in the seed entry field, use ctrl+/ instead
 * The program is not currently compatible with Linux/Mac.
 * When the program closes unexpectedly, it leaves mod files installed. To fix, see: http://pastebin.com/mfreKXXT
@@ -163,3 +156,9 @@ Some passive items are EXCLUDED from the random starting items. Characters canno
 * 327 - The Polaroid
 * 328 - The Negative
 * 332 - Lazarus' Rags
+
+
+History
+-------
+
+For full version history, see: https://github.com/duneaught/diversitymod/releases
