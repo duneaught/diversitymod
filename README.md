@@ -63,7 +63,9 @@ Known Issues
 Random Passive Starting Items
 -----------------------------
 
-If any character gets Isaac's Heart as a random starting item, Blood Rights is removed from the Treasure Room pool and will not be found in game.
+If any character gets Isaac's Heart as a random starting item, Blood Rights is removed from the Treasure Room pool.
+
+If any character gets Soymilk as a random starting item, Libra is removed from the Treasure Room pool.
 
 Some passive items are EXCLUDED from the random starting items. Characters cannot start with two of the same item. Blue Baby, Azazel, and The Lost have additional exclusions.
 
