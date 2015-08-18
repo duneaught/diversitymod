@@ -636,6 +636,8 @@
 		<Item Id="97" Weight="1" DecreaseBy="1.0" RemoveOn="0.1"/>
 		<!--Demon Baby-->
 		<Item Id="113" Weight="1" DecreaseBy="1.0" RemoveOn="0.1"/>
+		<!--Brimstone-->
+		<Item Id="118" Weight="1" DecreaseBy="1.0" RemoveOn="0.1"/>
 		<!--Whore of Babylon-->
 		<Item Id="122" Weight="1" DecreaseBy="1.0" RemoveOn="0.1"/>
 		<!--Razor Blade-->
