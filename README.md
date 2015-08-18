@@ -1,6 +1,6 @@
 Diversity Mod for The Binding of Isaac: Rebirth
 -----------------------------------------------
-version 0.8
+version 0.9
 
 Created by DuneAught (twitter: @duneaught)
 with much help from awerush, Hyphenated, Inschato, pears, Zamiel & #isaac on SpeedRunsLive
@@ -17,7 +17,7 @@ All characters start with the D6 except Eden, who gets a random space-use item a
 
 All characters start with 3 additional random passive items, keeping their original items and resources.
 
-Three items (Mom's Knife, Brimstone, & Epic Fetus) are removed from their respective item pools. They may be assigned as random starting items, but they will not appear in game during a playthrough.
+Mom's Knife & Epic Fetus are removed from their respective item pools. They may be assigned as random starting items, but they will not appear in game during a playthrough.
 
 The Special Item status is removed from the game.
 

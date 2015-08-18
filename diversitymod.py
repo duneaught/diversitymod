@@ -5,6 +5,7 @@ from tkFileDialog import askopenfilename
 from random import seed, randint, choice, shuffle
 from PIL import Image, ImageFont, ImageDraw, ImageTk
 from binascii import crc32
+from subprocess import call
 
 ##
 ## Get Steam path ( lines from http://code.activestate.com/recipes/578689-get-a-value-un-windows-registry/ )
@@ -189,22 +190,22 @@ def installDiversityMod():
 	dm.update_idletasks()
 	
 	# if Rebirth is running, kill it (returns an ugly error if Rebirth is not running, but just ignore it I guess)
-	try:
-		print("Attempting to kill Isaac ...\n")
-		os.system("taskkill /im isaac-ng.exe /f")
-	except OSError:
-		print("There was an error closing Rebirth.")
+#	try:
+#		print("Attempting to kill Isaac ...\n")
+	call(['taskkill', '/im', 'isaac-ng.exe', '/f'])
+#	except OSError:
+#		print("There was an error closing Rebirth.")
 
 	# re/start Rebirth
-	try:
-		if os.path.exists(resourcepath+"/../../../../steam.exe"):
-			print("Found steam ...")
-			os.system('"' + resourcepath + '/../../../../steam.exe" -applaunch 250900')
-		elif os.path.exists(resourcepath + "/../isaac-ng.exe"):
-			print("No Steam, but found isaac-ng.exe ...")
-			os.system('"' + resourcepath + '/../isaac-ng.exe"')
-	except OSError:
-		print("Starting Rebirth failed.\nPress Enter to close.")
+#	try:
+	if os.path.exists(resourcepath+"/../../../../steam.exe"):
+#			print("Found steam ...")
+		call([resourcepath + '/../../../../steam.exe', '-applaunch', '250900'])
+	elif os.path.exists(resourcepath + "/../isaac-ng.exe"):
+#			print("No Steam, but found isaac-ng.exe ...")
+		call(resourcepath + '/../isaac-ng.exe')
+#	except OSError:
+#		print("Starting Rebirth failed.\nPress Enter to close.")
 	
 def closeDiversityMod():
 	# remove all the files and folders EXCEPT packed and dmtmpfolder
@@ -249,7 +250,7 @@ def checkInstalled(*args):
 			sentry.configure(bg = '#f4e6e6')
 
 
-version = 0.8
+version = 0.9
 	
 # dm is the gui, entryseed is the rng seed, feedback is the message for user
 dm = Tk()
