@@ -65,7 +65,7 @@ def installDiversityMod():
 	# random permutation of valid items list
 	itemIDs = list(valid_items)
 	shuffle(itemIDs)
-	for x in range(4, 7): # cain
+	for x in range(6, 9): # cain
 		if itemIDs[x] == 46:
 			itemIDs.append(itemIDs[x])
 			del itemIDs[x]
