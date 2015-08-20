@@ -161,7 +161,7 @@ def installDiversityMod():
 			characterdraw.text((240-w3/2, 59), "(random)", (54, 47, 45), font = smallfont)
 	except NameError:
 		print 'error?'
-	titledraw.text((440,240), "v" + str(version), (54, 47, 45), font = largefont)
+	titledraw.text((435,240), "v" + str(version), (54, 47, 45), font = largefont)
 	characterimg.save(resourcepath + '/gfx/ui/main menu/charactermenu.png')
 	titleimg.save(resourcepath + '/gfx/ui/main menu/titlemenu.png')
 	
@@ -250,7 +250,7 @@ def checkInstalled(*args):
 			sentry.configure(bg = '#f4e6e6')
 
 
-version = 0.9
+version = 0.11
 	
 # dm is the gui, entryseed is the rng seed, feedback is the message for user
 dm = Tk()
