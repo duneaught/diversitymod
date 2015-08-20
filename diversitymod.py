@@ -260,7 +260,7 @@ feedback = StringVar()
 d6start = BooleanVar()
 # just the gui icon and title
 dm.iconbitmap("diversitymod files/poop.ico")
-dm.title("Diversity Mod")
+dm.title("Diversity Mod v" + str(version))
 
 # import options
 customs = ConfigParser.RawConfigParser()
